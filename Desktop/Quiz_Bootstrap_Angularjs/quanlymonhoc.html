@@ -1,0 +1,184 @@
+<div class="container-fluid">
+    <div class="container-fluid bg-dark p-0">
+      <div class="row">
+          <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+              <div class="container-fluid">
+                  <a class="navbar-brand" href="#">
+                      <a href="#!/trangchuadmin"><img src="./img/logofpoly.png" alt="" width="150" class="d-inline-block align-text-top"></a>                    
+                    </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarText">
+                  <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item px-3">
+                      <a class="nav-link fw-bold" aria-current="page" href="#!/trangchuadmin">TRANG CHỦ</a>
+                    </li>
+                    <li class="nav-item px-3">
+                      <a class="nav-link fw-bold" href="#!/monhoc">MÔN HỌC</a>
+                    </li>
+                    <li class="nav-item px-3">
+                      <a class="nav-link fw-bold" href="#!/sinhvien">QUẢN LÝ SINH VIÊN</a>
+                    </li>
+                    <li class="nav-item px-3">
+                      <a class="nav-link fw-bold" href="#!/quanlymonhoc">QUẢN LÝ MÔN HỌC</a>
+                    </li>
+                    <li class="nav-item px-3">
+                      <a class="nav-link fw-bold" href="#!/gioithieu">GIỚI THIỆU</a>
+                    </li>
+                    <li class="nav-item px-3">
+                      <a class="nav-link fw-bold" href="#!/lienhe">LIÊN HỆ</a>
+                    </li>
+                    <li class="nav-item px-3">
+                      <a class="nav-link fw-bold" href="#!/gopy">GÓP Ý</a>
+                    </li>
+                    <li class="nav-item px-3">
+                      <a class="nav-link fw-bold" href="#!/hoidap">HỎI ĐÁP</a>
+                    </li>
+                  </ul>
+                  <span class="navbar-text text-d">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 px-3">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle fw-bold" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                              ACCOUNT
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                              <li><a class="dropdown-item bg-white text-dark" ng-click="checklogin2()" href="#!/trangchu">Đăng ký</a></li>
+                              <li><a class="dropdown-item bg-white text-dark" ng-click="checklogin2()" href="#!/trangchu">Đăng nhập</a></li>
+                              <li><a class="dropdown-item bg-white text-dark" ng-click="checklogin2()" href="#!/trangchu">Quên mật khẩu</a></li>
+                              <li><hr class="dropdown-divider"></li>
+                              <li><a class="dropdown-item bg-white text-dark" href="#!/dangnhap">Đăng xuất</a></li>
+                              <li><a class="dropdown-item bg-white text-dark" data-bs-toggle="modal" data-bs-target="#staticBackdrop" href="#">Đổi mật khẩu</a></li>
+                              <li><a class="dropdown-item bg-white text-dark" href="#!/capnhattaikhoan">Cập nhật tài khoản</a></li>
+                            </ul>
+                          </li>
+                    </ul>
+                </span>
+                </div>
+              </div>
+            </nav>
+      </div>
+    </div>
+    <div class="container p-5">
+          
+      <form ng-submit="onFormSubmit($event)"
+          action=""
+          class="col-12" name="qlmh">
+          <div class="form-group mt-3">
+              <label for="">Câu hỏi</label>
+              <input class="form-control"
+                  type="text"
+                  ng-model="monhoc.cauhoi" name="cauhoi" id="cauhoi" required>
+                  <div>
+                      <small ng-show="qlmh.cauhoi.$error.required" class="form-text text-danger">Vui lòng nhập câu hỏi</small>
+                  </div>
+          </div>
+          <div class="form-group mt-3">
+            <label for="">Đáp án 1</label>
+            <input class="form-control"
+                type="text"
+                ng-model="monhoc.dapan1" name="dapan1" id="dapan1" required>
+                <div>
+                    <small ng-show="qlmh.dapan1.$error.required" class="form-text text-danger">Vui lòng nhập đáp án 1</small>
+                </div>
+        </div>
+        <div class="form-group mt-3">
+            <label for="">Đáp án 3</label>
+            <input class="form-control"
+                type="text"
+                ng-model="monhoc.dapan2" name="dapan2" id="dapan2" required>
+                <div>
+                    <small ng-show="qlmh.dapan2.$error.required" class="form-text text-danger">Vui lòng nhập đáp án 2</small>
+                </div>
+        </div>
+        <div class="form-group mt-3">
+            <label for="">Đáp án 3</label>
+            <input class="form-control"
+                type="text"
+                ng-model="monhoc.dapan3" name="dapan3" id="dapan3" required>
+                <div>
+                    <small ng-show="qlmh.dapan3.$error.required" class="form-text text-danger">Vui lòng nhập đáp án 3</small>
+                </div>
+        </div>
+        <div class="form-group mt-3">
+            <label for="">Đáp án 4</label>
+            <input class="form-control"
+                type="text"
+                ng-model="monhoc.dapan4" name="dapan4" id="dapan4" required>
+                <div>
+                    <small ng-show="qlmh.dapan4.$error.required" class="form-text text-danger">Vui lòng nhập đáp án 4</small>
+                </div>
+        </div>
+        <div class="form-group mt-3">
+            <button ng-disabled="qlmh.$invalid" ng-hide="index!=-1"class="btn btn-primary">Thêm</button>
+            <button ng-show="index!=-1"class="btn btn-primary" >Sửa</button>
+            <button type="reset"
+                class="btn btn-default ml-3">Xóa form</button>                
+        </div>
+      </form>
+      <div class="col-12">
+          <table class="table mt-3">
+              <thead>
+                  <tr>
+                      <th>Câu hỏi</th>
+                      <th>Đáp án 1</th>
+                      <th>Đáp án 2</th>
+                      <th>Đáp án 3</th>
+                      <th>Đáp án 4</th>                               
+                      <th colspan="2">Thao tác</th>
+                  </tr>
+              </thead>
+              <tbody>
+                <tr ng-repeat="mh in monhocs">
+                    <td>{{ mh.cauhoi }}</td>
+                    <td>{{ mh.dapan1 }}</td>
+                    <td>{{ mh.dapan2 }}</td>
+                    <td>{{ mh.dapan3 }}</td>
+                    <td>{{ mh.dapan4 }}</td>                  
+                    <td>
+                        <button class="btn btn-primary"  ng-click="edit($index)">Sửa</button>
+                    </td>
+                    <td>
+                        <button class="btn btn-danger"
+                          ng-click="onDelete($index)">Xóa</button>                     
+                    </td>
+                </tr>
+            </tbody>
+          </table>
+      </div>
+  </div>
+    <!-- Modal -->
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-body">
+            <div class="wrapper">
+              <div class="logo"> <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/FPT_Polytechnic.png/1200px-FPT_Polytechnic.png" alt=""> </div>
+              <div class="text-center mt-4 name"> Đổi mật khẩu </div>
+              <form class="p-3 mt-3">
+                  <div class="form-field d-flex align-items-center"> <span class="fas fa-key"></span> <input type="password" name="passwordold" id="pwdold" placeholder="Nhập mật khẩu cũ"> </div>
+                  <div class="form-field d-flex align-items-center"> <span class="fas fa-key"></span> <input type="password" name="passwordnew" id="pwdnew" placeholder="Nhập mật khẩu mới"> </div>
+                  <div class="form-field d-flex align-items-center"> <span class="fas fa-key"></span> <input type="password" name="passwordnewagain" id="pwdnewagain" placeholder="Nhập lại mật khẩu mới"> </div>
+              </form>           
+          </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Thoát</button>
+            <button type="button" class="btn btn-primary">Đổi mật khẩu</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid bg-dark mt-3">
+    <div class="row">
+        <div class="col-12">
+            <div class="bg-dark p-3 text-center" style="letter-spacing: 3px; width: 100%;">
+                <h5><span style="color:darkgrey;">FPT POLYTECHNIC</span><span style="color: white;">  FRONT-END</span><span style="color: darkgrey;">  bởi</span><span style="color: white;">  NGUYỄN THẾ HIỆP.</span></h5>
+                <h6 style="color: darkgrey;">© 2022 Copyright – All Rights Reserved.</h6>
+                <a href="https://www.facebook.com/NguyenHiep.Ent/" class="bi bi-facebook text-light fs-4"></a>
+                <a href="https://github.com/nguyenhiepskt1" class="bi bi-github text-light fs-4"></a>                  
+            </div>
+        </div>
+    </div>
+  </div>

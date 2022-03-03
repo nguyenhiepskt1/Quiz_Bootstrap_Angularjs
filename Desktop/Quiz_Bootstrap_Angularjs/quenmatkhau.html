@@ -1,0 +1,35 @@
+<div class="wrapper">
+        <div class="row">
+            <div style="margin-left: auto; margin-right: auto; width: 500px;">
+                <div class="logo"> <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/FPT_Polytechnic.png/1200px-FPT_Polytechnic.png" alt=""> </div>
+            </div>
+        </div>
+    <div class="text-center mt-4 name"> Quên mật khẩu </div>
+    <form class="p-3 mt-3" name="frmForgot">
+        <div class="form-field d-flex align-items-center"> <span class="far fa-user"></span> <input ng-model="username" type="text" name="username" id="username" placeholder="Tài khoản" required maxlength="25">
+         </div>
+         <div class="mb-4">
+            <small ng-show="frmForgot.username.$invalid" id="username" class="form-text text-danger">Vui lòng nhập tài khoản</small>
+        </div>
+        <div class="form-field d-flex align-items-center"> <span class="far fa-user"></span> <input ng-model="email" type="email" name="email" id="email" placeholder="Email đã đăng ký" required>
+         </div>
+         <div class="mb-4">
+            <small ng-show="frmForgot.email.$error.required" id="email" class="form-text text-danger">Vui lòng nhập email</small>
+            <small ng-show="frmForgot.email.$error.email" id="email" class="form-text text-danger">Không đúng định dạng email</small>
+        </div>
+        <button class="btn mt-3" ng-disabled="frmForgot.$invalid" ng-click="forgot()">Lấy lại mật khẩu</button>
+    </form>
+    <div class="text-center fs-6"> <a href="#!/dangnhap">Đăng nhập</a> or <a href="#!/dangky">Đăng ký</a> </div>
+</div>
+<div class="container-fluid bg-dark mt-3">
+    <div class="row">
+        <div class="col-12">
+            <div class="bg-dark p-3 text-center" style="letter-spacing: 3px; width: 100%;">
+                <h5><span style="color:darkgrey;">FPT POLYTECHNIC</span><span style="color: white;">  FRONT-END</span><span style="color: darkgrey;">  bởi</span><span style="color: white;">  NGUYỄN THẾ HIỆP.</span></h5>
+                <h6 style="color: darkgrey;">© 2022 Copyright – All Rights Reserved.</h6>
+                <a href="https://www.facebook.com/NguyenHiep.Ent/" class="bi bi-facebook text-light fs-4"></a>
+                <a href="https://github.com/nguyenhiepskt1" class="bi bi-github text-light fs-4"></a>                  
+            </div>
+        </div>
+    </div>
+  </div>

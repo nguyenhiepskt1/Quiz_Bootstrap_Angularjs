@@ -1,0 +1,134 @@
+<div class="container-fluid bg-dark">
+    <div class="row">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                    <a href="#!/trangchu"><img src="./img/logofpoly.png" alt="" width="150" class="d-inline-block align-text-top"></a>                    
+                  </a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarText">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item px-3">
+                    <a class="nav-link fw-bold" aria-current="page" href="#!/trangchu">TRANG CHỦ</a>
+                  </li>
+                  <li class="nav-item px-3">
+                    <a class="nav-link fw-bold" href="#!/monhoc">MÔN HỌC</a>
+                  </li>
+                  <li class="nav-item px-3">
+                    <a class="nav-link fw-bold" href="#!/gioithieu">GIỚI THIỆU</a>
+                  </li>
+                  <li class="nav-item px-3">
+                    <a class="nav-link fw-bold" href="#!/lienhe">LIÊN HỆ</a>
+                  </li>
+                  <li class="nav-item px-3">
+                    <a class="nav-link fw-bold" href="#!/gopy">GÓP Ý</a>
+                  </li>
+                  <li class="nav-item px-3">
+                    <a class="nav-link fw-bold" href="#!/hoidap">HỎI ĐÁP</a>
+                  </li>
+                </ul>
+                <span class="navbar-text text-d">
+                  <ul class="navbar-nav me-auto mb-2 mb-lg-0 px-3">
+                      <li class="nav-item dropdown">
+                          <a class="nav-link dropdown-toggle fw-bold" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            ACCOUNT
+                          </a>
+                          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item bg-white text-dark" href="#!/dangky">Đăng ký</a></li>
+                            <li><a class="dropdown-item bg-white text-dark" href="#!/dangnhap">Đăng nhập</a></li>
+                            <li><a class="dropdown-item bg-white text-dark" href="#!/quenmatkhau">Quên mật khẩu</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item bg-white text-dark" href="#!/dangnhap">Đăng xuất</a></li>
+                            <li><a class="dropdown-item bg-white text-dark" data-bs-toggle="modal" data-bs-target="#staticBackdrop" href="#">Đổi mật khẩu</a></li>
+                            <li><a class="dropdown-item bg-white text-dark" href="#!/capnhattaikhoan">Cập nhật tài khoản</a></li>
+                          </ul>
+                        </li>
+                  </ul>
+              </span>
+              </div>
+            </div>
+          </nav>
+    </div>
+  </div>
+<div class="container my-5" id="content">
+    <div class="row" ng-show="!inProgress">
+        <div class="col text-center">
+            <button class="btn btn-primary" ng-click="start()">Bắt đầu làm bài</button>
+        </div>
+    </div>
+    
+    <div ng-show="inProgress">
+        <div class="row" ng-show="quizOver">
+            <div class="col text-center">
+                <h3 style="color: red;" class="pb-3">Bạn đã hoàn thành bài thi</h3>
+                <h4 class="pb-3">Điểm của bạn là : <span class="badge rounded-pill bg-danger">{{score}}/10</span></h4>
+                <button class="btn btn-primary" ng-click="reset()">Làm lại bài thi</button>
+            </div>
+        </div>
+        <div ng-show="!quizOver">        
+            <div class="row">
+                <div class="col">
+                    <div class="card border-info">
+                        <div class="card-header text-white" style="background-color: #23B5E1;">
+                            <span>{{subjectName}}</span>
+                            <span class="float-end badge rounded-pill bg-dark" style="padding: .28em .7em;">{{id}}/10</span>
+                        </div>
+                        <div class="card-body">
+        
+                            <div class="card-text" style="font-weight: 500;">
+                                <label for="" style="font-weight: 700; font-size: 18px;">{{question}}</label>
+                                <hr>
+                                <div class="form-check" ng-repeat="option in options">                            
+                                    <label class="form-check-label" for="Radios1">
+                                    <input class="form-check-input" type="radio" name="answer" value="{{option.Id}}">
+                                        {{option.Text}}
+                                    </label>
+                                </div>                        
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <div ng-show="answerMode">
+                                <button ng-click="checkAnswer()" class="btn btn-primary">Submit</button>
+                            </div>
+                            <div ng-show="!answerMode">
+                                <button ng-click="nextQuestion()" class="btn btn-primary">Next</button>
+                                <span ng-show="correctAnswer" style="font-size: 20px;">Bạn đã trả lời đúng!</span>
+                                <span ng-show="!correctAnswer" style="font-size: 20px;">Bạn đã trả lời sai!</span>
+                            </div>                               
+                            <div class="pt-2 col text-center" style="margin-left: auto; margin-right: auto;">
+                                <span class="badge rounded-pill bg-danger"
+                                style="padding: .28em .7em; font-size: 90%; font-weight: 500;">Điểm:
+                                {{score}}/10</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-body">
+          <div class="wrapper">
+            <div class="logo"> <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/FPT_Polytechnic.png/1200px-FPT_Polytechnic.png" alt=""> </div>
+            <div class="text-center mt-4 name"> Đổi mật khẩu </div>
+            <form class="p-3 mt-3">
+                <div class="form-field d-flex align-items-center"> <span class="fas fa-key"></span> <input type="password" name="passwordold" id="pwdold" placeholder="Nhập mật khẩu cũ"> </div>
+                <div class="form-field d-flex align-items-center"> <span class="fas fa-key"></span> <input type="password" name="passwordnew" id="pwdnew" placeholder="Nhập mật khẩu mới"> </div>
+                <div class="form-field d-flex align-items-center"> <span class="fas fa-key"></span> <input type="password" name="passwordnewagain" id="pwdnewagain" placeholder="Nhập lại mật khẩu mới"> </div>
+            </form>           
+        </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Thoát</button>
+          <button type="button" class="btn btn-primary">Đổi mật khẩu</button>
+        </div>
+      </div>
+    </div>
+  </div>

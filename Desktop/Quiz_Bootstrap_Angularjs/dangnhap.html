@@ -1,0 +1,28 @@
+<div class="wrapper">
+    <div class="row">
+        <div style="margin-left: auto; margin-right: auto; width: 500px;">
+            <div class="logo"> <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/FPT_Polytechnic.png/1200px-FPT_Polytechnic.png" alt=""> </div>
+        </div>
+    </div>
+    <div class="text-center mt-4 name"> Đăng nhập </div>
+    <form class="p-3 mt-3" name="frmLogin" id="frmLogin">
+        <div class="form-field d-flex align-items-center"> <span class="far fa-user"></span> <input ng-model="username" type="text" name="username" id="username" placeholder="Tài khoản" required maxlength="25"></div>
+        <div class="mb-4"><small ng-show="frmLogin.username.$invalid" id="username" class="text-danger">Vui lòng nhập tài khoản</small></div>
+        <div class="form-field d-flex align-items-center"> <span class="fas fa-key"></span> <input ng-model="password" type="password" name="password" id="pwd" placeholder="Mật khẩu" required maxlength="25"> </div> 
+        <small ng-show="frmLogin.password.$invalid" id="password" class="form-text text-danger">Vui lòng nhập mật khẩu</small>
+        <button ng-disabled="frmLogin.$invalid" class="btn mt-3" ng-click="login()">Đăng nhập</button>
+    </form>
+    <div class="text-center fs-6"> <a href="#!/quenmatkhau">Quên mật khẩu?</a> or <a href="#!/dangky">Đăng ký</a> </div>
+</div>
+<div class="container-fluid bg-dark mt-3">
+    <div class="row">
+        <div class="col-12">
+            <div class="bg-dark p-3 text-center" style="letter-spacing: 3px; width: 100%;">
+                <h5><span style="color:darkgrey;">FPT POLYTECHNIC</span><span style="color: white;">  FRONT-END</span><span style="color: darkgrey;">  bởi</span><span style="color: white;">  NGUYỄN THẾ HIỆP.</span></h5>
+                <h6 style="color: darkgrey;">© 2022 Copyright – All Rights Reserved.</h6>
+                <a href="https://www.facebook.com/NguyenHiep.Ent/" class="bi bi-facebook text-light fs-4"></a>
+                <a href="https://github.com/nguyenhiepskt1" class="bi bi-github text-light fs-4"></a>                  
+            </div>
+        </div>
+    </div>
+  </div>
